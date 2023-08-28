@@ -182,22 +182,3 @@ class Ai:
 			pickle.dump(classify, intents_classify_file)
 
 		self.connect_model(training, output, "train")
-
-		# Training over the data-
-		#net = tflearn.input_data(shape=[None, len(training[0])])
-		#net = tflearn.regression(
-		#	tflearn.fully_connected(
-		#		tflearn.fully_connected(
-		#			tflearn.fully_connected(
-		#				net,
-		#			8),
-		#		8),
-		#	len(output[0]), activation="softmax")	# Softmax gives its neurons probability range based on how accurate it is with it's output
-		#)
-#
-		#model = tflearn.DNN(net)
-		#model.fit(training, output, n_epoch=self.N_EPOCHS, batch_size=self.BATCH_SIZE, show_metric=True)
-		#model.save(rf"model\model_versions\MV{self.MODEL_NO}\generative_model_{self.MODEL_NO}.{self.N_EPOCHS}.{self.BATCH_SIZE}.tflearn")
-
-
-#Ai(0, 500, 8, "intents.json").train_model()
