@@ -6,7 +6,7 @@
 				"hi", "hello", "how are you", "whats up", "sup", "yo"
 			],
 			"responses":[
-				"Hello there! How you doing?", "How may I help you?", "Hello!", "Hi!"
+				"Hello there! How you doing?", "Hello there, How may I help you?", "Hello!", "Hi!"
 			],
 			"context_set":""
 		}
