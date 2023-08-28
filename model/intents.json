@@ -58,6 +58,16 @@
 			"responses":[
 				"An ampere is a unit of measure of the rate of electron flow or current in an electrical conductor. One ampere of current represents one coulomb of electrical charge (6.24 x 10^18 charge carriers) moving past a specific point in one second."
 			]
+		},
+
+		{
+			"tag":"physics_2",
+			"patterns":[
+				"what is a capacitor", "what is capcaitor", "define capcaitor", "define capcaitor"
+			],
+			"responses":[
+				"A capacitor is a device that stores electrical energy in an electric field by accumulating electric charges on two closely spaced surfaces that are insulated from each other. It is a passive electronic component with two terminals. The effect of a capacitor is known as capacitance."
+			]
 		}
 	]
 }
