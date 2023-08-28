@@ -38,6 +38,16 @@
 			"responses":[
 				"That's sad... hope you feel better soon!", "Oh no :("
 			]
+		},
+
+		{
+			"tag":"physics_0",
+			"patterns":[
+				"what is a volt", "what is voltage", "define volt"
+			],
+			"responses":[
+				"Voltage is the pressure from an electrical circuit's power source that pushes charged electrons (current) through a conducting loop, enabling them to do work such as illuminating a light."
+			]
 		}
 	]
 }
