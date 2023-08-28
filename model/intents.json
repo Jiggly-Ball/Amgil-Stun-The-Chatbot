@@ -43,10 +43,20 @@
 		{
 			"tag":"physics_0",
 			"patterns":[
-				"what is a volt", "what is voltage", "define volt"
+				"what is a volt", "what is voltage", "define volt", "define voltage"
 			],
 			"responses":[
 				"Voltage is the pressure from an electrical circuit's power source that pushes charged electrons (current) through a conducting loop, enabling them to do work such as illuminating a light."
+			]
+		},
+	
+		{
+			"tag":"physics_1",
+			"patterns":[
+				"what is an ampere", "what is ampere", "define ampere", "whats an ampere"
+			],
+			"responses":[
+				"An ampere is a unit of measure of the rate of electron flow or current in an electrical conductor. One ampere of current represents one coulomb of electrical charge (6.24 x 1018 charge carriers) moving past a specific point in one second."
 			]
 		}
 	]
