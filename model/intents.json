@@ -53,10 +53,10 @@
 		{
 			"tag":"physics_1",
 			"patterns":[
-				"what is an ampere", "what is ampere", "define ampere", "whats an ampere"
+				"what is an ampere", "what is ampere", "define ampere", "whats an ampere", "define an ampere"
 			],
 			"responses":[
-				"An ampere is a unit of measure of the rate of electron flow or current in an electrical conductor. One ampere of current represents one coulomb of electrical charge (6.24 x 1018 charge carriers) moving past a specific point in one second."
+				"An ampere is a unit of measure of the rate of electron flow or current in an electrical conductor. One ampere of current represents one coulomb of electrical charge (6.24 x 10^18 charge carriers) moving past a specific point in one second."
 			]
 		}
 	]
