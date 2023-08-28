@@ -3,12 +3,22 @@
 		{
 			"tag":"greeting",
 			"patterns":[
-				"hi", "hello", "how are you", "whats up", "sup", "yo"
+				"hi", "hello", "whats up", "sup", "yo"
 			],
 			"responses":[
 				"Hello there! How you doing?", "Hello there, How may I help you?", "Hello!", "Hi!"
 			],
 			"context_set":""
+		},
+
+		{
+			"tag":"greeting_interactive",
+			"patterns":[
+				"How are you", "hru", "how are u", "how's your day", "are you doing good", "hw u doing"
+			],
+			"responses":[
+				"I'm doing great! What would you like to talk about?", "I'm doing fine. What would you like to talk about?", "Doing great as usual!"
+			]
 		}
 	]
 }

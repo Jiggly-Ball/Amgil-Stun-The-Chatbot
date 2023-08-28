@@ -25,6 +25,7 @@ class Ai:
 		self.dataset = dataset		# The file location of the dataset over which the AI is going to train over
 
 		self.ignore_chars = ("?", "!", ".", ",", "|")
+		self.min_confidence = 0.78	# Requires atleast 75% confidence rate on the highest probable result to show the output to the user
 
 		self.classify:	dict | None				= None
 		self.words:		list | None				= None
@@ -99,7 +100,7 @@ class Ai:
 				if word == t:
 					bag[index] = 1
 		
-		prediction_values = model.predict([numpy.array(bag)])
+		prediction_values = model.predict([numpy.array(bag)])[0]
 		prediction_result =  numpy.argmax(prediction_values)
 		tag_result = self.labels[prediction_result]
 
@@ -107,6 +108,16 @@ class Ai:
 		#print(prediction_values)
 		#print(prediction_result)
 		#print(tag_result)
+
+		if prediction_values[prediction_result] < self.min_confidence:
+			return random.choice(
+				(
+					"I'm sorry, I don't understand your question.",
+					"Could you repharse your question?",
+					"What you're trying to say is beyond my knowledge, sorry."
+				)
+			)
+
 		return random.choice(data["intents"][self.classify[tag_result]]["responses"])
 	
 

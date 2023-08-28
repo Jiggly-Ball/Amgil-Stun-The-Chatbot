@@ -2,7 +2,7 @@ if __name__ == "__main__":
 
 	from model.ai import Ai
 
-	chatbot = Ai(0, 500, 8, "model/intents.json")
+	chatbot = Ai(0, 2000, 8, "model/intents.json")
 
 	chatbot.train_model()
 
