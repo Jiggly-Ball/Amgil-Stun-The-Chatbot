@@ -3,12 +3,11 @@
 		{
 			"tag":"greeting",
 			"patterns":[
-				"hi", "hello", "whats up", "sup", "yo"
+				"hi", "hello", "whats up", "sup", "yo", "heloo", "helllooo", "helu", "hoi", "hui", "heloo"
 			],
 			"responses":[
-				"Hello there! How you doing?", "Hello there, How may I help you?", "Hello!", "Hi!"
-			],
-			"context_set":""
+				"Hello there! How you doing?", "Hello there, how may I help you?", "Hello!", "Hi!"
+			]
 		},
 
 		{
@@ -18,6 +17,26 @@
 			],
 			"responses":[
 				"I'm doing great! What would you like to talk about?", "I'm doing fine. What would you like to talk about?", "Doing great as usual!"
+			]
+		},
+
+		{
+			"tag":"greeting_optimistic",
+			"patterns":[
+				"im good", "im gud", "im doing gud", "im doing gud", "im fine", "am fine", "im doing great", "im great", "i am doing good", "i am doing fine", "good as usual"
+			],
+			"responses":[
+				"That's great to hear! What would you like to talk about?", "Wonderful! So what are we going to talk about today?", "Doing great as usual!"
+			]
+		},
+
+		{
+			"tag":"greeting_pessimistic",
+			"patterns":[
+				"bad", "not good", "not great", "doing bad", "not doing so good", "not fine", "im doing bad", "im not doing great", "i am not doing good", "i am not doing fine", "not good as usual"
+			],
+			"responses":[
+				"That's sad... hope you feel better soon!", "Oh no :("
 			]
 		}
 	]

@@ -2,9 +2,9 @@ if __name__ == "__main__":
 
 	from model.ai import Ai
 
-	chatbot = Ai(0, 2000, 8, "model/intents.json")
+	chatbot = Ai(1, 680, 8, "model/intents.json")
 
-	chatbot.train_model()
+	#chatbot.train_model()
 
 	while True:
 		user_inp = input("You: ")

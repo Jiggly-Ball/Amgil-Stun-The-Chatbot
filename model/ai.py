@@ -24,8 +24,8 @@ class Ai:
 		self.stemmer = LancasterStemmer()
 		self.dataset = dataset		# The file location of the dataset over which the AI is going to train over
 
-		self.ignore_chars = ("?", "!", ".", ",", "|")
-		self.min_confidence = 0.78	# Requires atleast 75% confidence rate on the highest probable result to show the output to the user
+		self.ignore_chars 				= ("?", "!", ".", ",", "|")	# Characters to be ignored while training
+		self.confidence_threshold 		= 0.818						# Requires atleast 75% confidence rate on the highest probable result to show the output to the user
 
 		self.classify:	dict | None				= None
 		self.words:		list | None				= None
@@ -104,12 +104,13 @@ class Ai:
 		prediction_result =  numpy.argmax(prediction_values)
 		tag_result = self.labels[prediction_result]
 
+		print()
+		print(prediction_values)
+		print(prediction_values[prediction_result])
+		print(tag_result)
+		print()
 
-		#print(prediction_values)
-		#print(prediction_result)
-		#print(tag_result)
-
-		if prediction_values[prediction_result] < self.min_confidence:
+		if (prediction_values[prediction_result] < self.confidence_threshold):
 			return random.choice(
 				(
 					"I'm sorry, I don't understand your question.",
