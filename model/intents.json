@@ -16,7 +16,7 @@
 				"How are you", "hru", "how are u", "how's your day", "are you doing good", "hw u doing"
 			],
 			"responses":[
-				"I'm doing great! What would you like to talk about?", "I'm doing fine. What would you like to talk about?", "Doing great as usual!"
+				"I'm doing great! What would you like to talk about?", "I'm doing fine. What would you like to talk about?", "Doing great as usual!", "Doing great! What would you like to talk about?"
 			]
 		},
 
@@ -26,7 +26,7 @@
 				"im good", "im gud", "im doing gud", "im doing gud", "im fine", "am fine", "im doing great", "im great", "i am doing good", "i am doing fine", "good as usual"
 			],
 			"responses":[
-				"That's great to hear! What would you like to talk about?", "Wonderful! So what are we going to talk about today?", "Doing great as usual!"
+				"That's great to hear! What would you like to talk about?", "Wonderful! So what are we going to talk about today?", "Amazing!"
 			]
 		},
 

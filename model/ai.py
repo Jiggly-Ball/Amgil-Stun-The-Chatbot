@@ -1,3 +1,4 @@
+import os
 import nltk
 import numpy
 import tensorflow
@@ -9,9 +10,8 @@ import tflearn
 from nltk.stem.lancaster import LancasterStemmer
 from typing import Literal
 
-
 class Ai:
-	def __init__(self, model_no:int , n_epochs:int, batch_size:int, dataset:str) -> None:
+	def __init__(self, model_no:int , n_epochs:int, batch_size:int, dataset:str) -> None: 
 		try:
 			nltk.data.find("tokenizers/punkt")
 		except LookupError:
@@ -25,7 +25,7 @@ class Ai:
 		self.dataset = dataset		# The file location of the dataset over which the AI is going to train over
 
 		self.ignore_chars 				= ("?", "!", ".", ",", "|")	# Characters to be ignored while training
-		self.confidence_threshold 		= 0.818						# Requires atleast 75% confidence rate on the highest probable result to show the output to the user
+		self.confidence_threshold 		= 0.818						# Requires atleast 81.8% confidence rate on the highest probable result to show the output to the user
 
 		self.classify:	dict | None				= None
 		self.words:		list | None				= None
