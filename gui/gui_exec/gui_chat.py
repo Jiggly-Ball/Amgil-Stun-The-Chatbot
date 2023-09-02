@@ -1,22 +1,52 @@
+import random
+
 from kivymd.uix.screen import Screen
 from kivymd.uix.button import MDRoundFlatButton
 from kivymd.uix.list import OneLineListItem
+from kivymd.utils import asynckivy
 
 from cloud.server import Server
 from local.data import Data
 from model.ai import Ai
 
 class ChatScreen(Screen):
+
+	chat_data = []
+
 	def __init__(self, **kw):
 		super().__init__(**kw)
-		self.chatbot = Ai(1, 700, 8, "model/intents.json")
+		self.chatbot = Ai(2, 700, 8, "model/intents.json")
 		self.server = Server()
 
 	def on_enter(self):
+		print(Data.username)
 
-		#send_button = MDRoundFlatButton(text="Send", pos_hint={"center_x":0.8, #"center_y":0.1}, on_release=self.send_chat, width=100, size_hint_x=None)
-		#self.add_widget(send_button)
+		def history_handler():
+			async def populate():
+				print("Populating start")
+				print(self.chat_data)
+				while True:
+					if Data.loaded:
+						break
+				
+				await asynckivy.sleep(1)
 
+				user = self.server.get_chat(Data.username)
+				chat_history = user["chat_history"]
+
+				for chat_id in chat_history:
+					if chat_id not in self.chat_data:
+						self.ids.chat_data.add_widget(
+							OneLineListItem(
+								text=chat_history[chat_id]
+							)
+						)
+						self.chat_data.append(chat_id)
+				
+				print("Populating end")
+				print(self.chat_data)
+			asynckivy.start(populate())
+		history_handler()
 		return super().on_enter()
 
 
@@ -24,24 +54,25 @@ class ChatScreen(Screen):
 		if len(self.ids.text_data.text) == 0:
 			return
 		
-		user_response = f"You: {self.ids.text_data.text}"
+		user_response = self.ids.text_data.text
 
 		self.ids.text_data.text = ""
 
 		self.ids.chat_data.add_widget(
 			OneLineListItem(
-				text=user_response
+				text=f"You: {user_response}"
 			)
 		)
 
-		response = self.chatbot.ask_model(self.ids.text_data.text.lower().strip())
-		bot_response = f"Bot: {response}"
-
+		bot_response = self.chatbot.ask_model(user_response.lower().strip())
+		
 		self.ids.chat_data.add_widget(
 			OneLineListItem(
-				text=bot_response
+				text=f"Bot: {bot_response}"
 			)
 		)
 
-		self.server.update_chat(Data.username, user_response)
-		self.server.update_chat(Data.username, bot_response)
+		user_chat_id = self.server.update_chat(Data.username, f"You: {user_response}")[1]
+		bot_chat_id = self.server.update_chat(Data.username, f"Bot: {bot_response}" )[1]
+
+		self.chat_data.extend([user_chat_id, bot_chat_id])

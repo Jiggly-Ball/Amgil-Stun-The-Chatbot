@@ -4,7 +4,6 @@ setting_kivy = """
 	id: settings
 
 	MDLabel:
-		
 		text: "Theme"
         pos_hint: {"center_x": 0.2, "center_y": 0.8}
 		font_size: 20
@@ -47,22 +46,8 @@ setting_kivy = """
 		padding_y: 15
 
 	MDIconButton:
-		
 		icon: "close-circle"
 		pos_hint: {"center_x": 0.9, "center_y": 0.9}
 		theme_text_color: "Hint"
 		on_release: self.parent.manager.current = "kv_chat_screen"
-
-		#MDNavigationLayout:
-		#	MDNavigationDrawer:
-		#		MDNavigationDrawerIconButton:
-		#			text: "Dark"
-		#			on_release: app.theme_cls.theme_style = "Dark"
-		#			on_release: app.save_settings(*args)
-#
-		#		MDNavigationDrawerIconButton:
-		#			text: "Light"
-		#			on_release: app.theme_cls.theme_style = "Light"
-		#			on_release: app.save_settings(*args)
-
 """

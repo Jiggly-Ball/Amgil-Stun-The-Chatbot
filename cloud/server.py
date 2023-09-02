@@ -1,9 +1,12 @@
 import pickle
 import dns
+import random
 
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
+
 from base64 import b64decode
+from typing import Tuple
 
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=["8.8.8.8"]
@@ -31,19 +34,25 @@ class Server:
 		except DuplicateKeyError:
 			return False
 		try:
-			self.chat_history.insert_one({"_id":username, "chat_history":[]})
+			self.chat_history.insert_one({"_id":username, "chat_history":{}})
 		except DuplicateKeyError:
 			return False
 		return True
 
 
 	def get_chat(self, username:str) -> (dict | None):
+		if username == "G0":
+			return {"_id":"G0", "chat_history":{}}
 		return self.chat_history.find_one({"_id":username})
 
-	def update_chat(self, username:str, message:str) -> bool:
+	def update_chat(self, username:str, message:str) -> Tuple[bool, str]:
 		chat_hist = self.get_chat(username=username)
 		if chat_hist is None:
-			return False
-		chat_hist["chat_history"].append(message)
+			return (False, "-1")
+		
+		chat_tag = str(random.randint(1, 999999))
+		chat_tag = "0" * (6 -len(chat_tag)) + chat_tag
+
+		chat_hist["chat_history"][chat_tag] = message
 		self.chat_history.update_one({"_id":username}, {"$set":{"chat_history": chat_hist["chat_history"]}})
-		return True
+		return (True, chat_tag)

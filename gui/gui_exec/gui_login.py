@@ -30,7 +30,7 @@ class LoginScreen(Screen):
         print(self.ids.password.text)
 
         cloud_user = self.server.get_user(self.ids.username.text.lower())
-        print(cloud_user)
+        #print(cloud_user)
 
         if cloud_user is None:
             self.ids.log_label.text = "This user was not found. Please register."
@@ -40,11 +40,10 @@ class LoginScreen(Screen):
             self.ids.log_label.text = "Incorrect password."
             return
 
-        print(self.ids.check_box_value.text)
-
-        self.ids.log_label.text = f"Welcome {self.ids.username.text}."
+        #print(self.ids.check_box_value.text)
 
         Data.username = self.ids.username.text.lower().strip()
+        Data.password = self.ids.password.text
 
         if Data.remember:
             with open("local/user_info.bin", "wb") as user_info_file:
@@ -59,12 +58,14 @@ class LoginScreen(Screen):
 
             print("saved settings")
 
+        self.ids.username.text = ""
+        self.ids.password.text = ""
         self.manager.current = "kv_chat_screen"
 
 
     def register_callback(self, item):
-        print(self.ids.username.text)
-        print(self.ids.password.text)
+        #print(self.ids.username.text)
+        #print(self.ids.password.text)
 
         if len(self.ids.username.text.lower().strip()) < 3:
             self.ids.log_label.text = "Your username should be of atleast 3 characters"

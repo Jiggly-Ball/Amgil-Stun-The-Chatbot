@@ -9,7 +9,6 @@
 				"Hello there! How you doing", "Hello there, how may I help you", "Hello!", "Hi!"
 			]
 		},
-
 		{
 			"tag":"greeting_interactive",
 			"patterns":[
@@ -19,7 +18,6 @@
 				"I'm doing great! What would you like to talk about", "I'm doing fine. What would you like to talk about", "Doing great as usual!", "Doing great! What would you like to talk about"
 			]
 		},
-
 		{
 			"tag":"greeting_optimistic",
 			"patterns":[
@@ -29,7 +27,6 @@
 				"That's great to hear! What would you like to talk about", "Wonderful! So what are we going to talk about today", "Amazing!"
 			]
 		},
-
 		{
 			"tag":"greeting_pessimistic",
 			"patterns":[
@@ -39,9 +36,8 @@
 				"That's sad... hope you feel better soon!", "Oh no :("
 			]
 		},
-
 		{
-			"tag":"physics_0",
+			"tag":"question_0",
 			"patterns":[
 				"what is a volt", "what is voltage", "define volt", "define voltage"
 			],
@@ -49,9 +45,8 @@
 				"Voltage is the pressure from an electrical circuit's power source that pushes charged electrons (current) through a conducting loop, enabling them to do work such as illuminating a light."
 			]
 		},
-	
 		{
-			"tag":"physics_1",
+			"tag":"question_1",
 			"patterns":[
 				"what is an ampere", "what is ampere", "define ampere", "whats an ampere", "define an ampere"
 			],
@@ -59,9 +54,8 @@
 				"An ampere is a unit of measure of the rate of electron flow or current in an electrical conductor. One ampere of current represents one coulomb of electrical charge (6.24 x 10^18 charge carriers) moving past a specific point in one second."
 			]
 		},
-
 		{
-			"tag":"physics_2",
+			"tag":"question_2",
 			"patterns":[
 				"what is a capacitor", "what is capcaitor", "define capcaitor", "define capcaitor"
 			],
@@ -69,509 +63,517 @@
 				"A capacitor is a device that stores electrical energy in an electric field by accumulating electric charges on two closely spaced surfaces that are insulated from each other. It is a passive electronic component with two terminals. The effect of a capacitor is known as capacitance."
 			]
 		},
-
-		
-			{
-			  "tag": "physics_11",
-			  "patterns": [
-				" What is photosynthesis",
-				"Define photosynthesis"
-			  ],
-			  "responses": [
-				" Photosynthesis is the process by which plants convert sunlight into energy and produce oxygen. "
-			  ]
-			},
-			{
-			  "tag": "physics_12",
-			  "patterns": [
-				" What is the main function of leaves in plants, ",
-				"Define the main function of leaves in plants"
-			  ],
-			  "responses": [
-				" Leaves in plants primarily function to capture sunlight and perform photosynthesis. "
-			  ]
-			},
-			{
-			  "tag": "physics_13",
-			  "patterns": [
-				" How do plants make their own food, ",
-				"How do plants gets energy"
-			  ],
-			  "responses": [
-				" Plants make their own food through a process called photosynthesis. "
-			  ]
-			},
-			{
-			  "tag": "physics_14",
-			  "patterns": [
-				" What are the parts of a flower, ",
-				"What makes a flower"
-			  ],
-			  "responses": [
-				" The main parts of a flower are the petals sepals stamen and pistil. "
-			  ]
-			},
-			{
-			  "tag": "physics_15",
-			  "patterns": [
-				" Explain the life cycle of a frog., ",
-				"What is the life cycle of a frog.,"
-			  ],
-			  "responses": [
-				" The life cycle of a frog includes egg tadpole froglet and adult stages. "
-			  ]
-			},
-			{
-			  "tag": "physics_16",
-			  "patterns": [
-				" What is the purpose of the skeleton in the human body, ",
-				"Define the purpose of the skeleton in the human body"
-			  ],
-			  "responses": [
-				" The skeleton provides support protection and enables movement in the human body. "
-			  ]
-			},
-			{
-			  "tag": "physics_17",
-			  "patterns": [
-				" What is digestion, ",
-				"Define digestion"
-			  ],
-			  "responses": [
-				" Digestion is the process of breaking down food into smaller substances for absorption. "
-			  ]
-			},
-			{
-			  "tag": "physics_18",
-			  "patterns": [
-				" What are the five senses, ",
-				"Define the five senses"
-			  ],
-			  "responses": [
-				" The five senses are sight hearing taste smell and touch. "
-			  ]
-			},
-			{
-			  "tag": "physics_19",
-			  "patterns": [
-				" How does the respiratory system work, ",
-				"Define the process of respiratory system"
-			  ],
-			  "responses": [
-				" The respiratory system allows us to breathe taking in oxygen and releasing carbon dioxide. "
-			  ]
-			},
-			{
-			  "tag": "physics_20",
-			  "patterns": [
-				" What is the difference between herbivores and carnivores, ",
-				"What is herbivores and carnivores"
-			  ],
-			  "responses": [
-				" Herbivores eat plants while carnivores eat other animals. "
-			  ]
-			},
-			{
-			  "tag": "physics_21",
-			  "patterns": [
-				" Why do we need water, ",
-				"What is the use of water"
-			  ],
-			  "responses": [
-				" We need water for hydration bodily functions and to regulate body temperature. "
-			  ]
-			},
-			{
-			  "tag": "physics_22",
-			  "patterns": [
-				" What is DNA and how does it determine traits, ",
-				"Define DNA and how does it determine traits"
-			  ],
-			  "responses": [
-				" DNA is a molecule that carries genetic information determining our traits. "
-			  ]
-			},
-			{
-			  "tag": "physics_23",
-			  "patterns": [
-				" How do plants reproduce, ",
-				"Explain reproduction of plants "
-			  ],
-			  "responses": [
-				" Plants reproduce through processes like pollination and seed formation. "
-			  ]
-			},
-			{
-			  "tag": "physics_24",
-			  "patterns": [
-				" What is the role of blood in the human body, ",
-				"Define the role of blood in the human body"
-			  ],
-			  "responses": [
-				" Blood transports oxygen nutrients and waste products throughout the body. "
-			  ]
-			},
-			{
-			  "tag": "physics_25",
-			  "patterns": [
-				" What is the difference between a virus and bacteria, ",
-				"Define the difference between a virus and bacteria"
-			  ],
-			  "responses": [
-				" Viruses are smaller than bacteria and can't reproduce on their own. "
-			  ]
-			},
-			{
-			  "tag": "physics_26",
-			  "patterns": [
-				" Why do we sweat, ",
-				"How does the human body release heat"
-			  ],
-			  "responses": [
-				" Sweating helps regulate body temperature and remove toxins. "
-			  ]
-			},
-			{
-			  "tag": "physics_27",
-			  "patterns": [
-				" What is adaptation in animals, ",
-				"Define adaptation in animals"
-			  ],
-			  "responses": [
-				" Adaptation in animals refers to changes that help them survive in their environment. "
-			  ]
-			},
-			{
-			  "tag": "physics_28",
-			  "patterns": [
-				" What are cells and why are they important, ",
-				"Explain the use of cells "
-			  ],
-			  "responses": [
-				" Cells are the basic units of life and perform various functions in organisms. "
-			  ]
-			},
-			{
-			  "tag": "physics_29",
-			  "patterns": [
-				" Explain the process of pollination., ",
-				"Define process of pollination.,"
-			  ],
-			  "responses": [
-				" Pollination is the transfer of pollen from one flower to another enabling fertilization. "
-			  ]
-			},
-			{
-			  "tag": "physics_30",
-			  "patterns": [
-				" What is the function of the brain, ",
-				"Define the function of the brain"
-			  ],
-			  "responses": [
-				" The brain controls thoughts emotions and bodily functions. "
-			  ]
-			},
-			{
-			  "tag": "physics_31",
-			  "patterns": [
-				" What is an ecosystem, ",
-				"Define an ecosystem"
-			  ],
-			  "responses": [
-				" An ecosystem is a community of living organisms and their environment. "
-			  ]
-			},
-			{
-			  "tag": "physics_32",
-			  "patterns": [
-				" How do animals hibernate, ",
-				"What is the process of animals hibernation"
-			  ],
-			  "responses": [
-				" Animals hibernate to conserve energy during harsh conditions. "
-			  ]
-			},
-			{
-			  "tag": "physics_33",
-			  "patterns": [
-				" What is the importance of recycling, ",
-				"Define the importance of recycling"
-			  ],
-			  "responses": [
-				" Recycling reduces waste and conserves resources. "
-			  ]
-			},
-			{
-			  "tag": "physics_34",
-			  "patterns": [
-				" Why is biodiversity important, ",
-				"What is the use of biodiversity"
-			  ],
-			  "responses": [
-				" Biodiversity ensures the health of ecosystems and provides resilience. "
-			  ]
-			},
-			{
-			  "tag": "physics_35",
-			  "patterns": [
-				" What is a food chain, ",
-				"Define a food chain"
-			  ],
-			  "responses": [
-				" A food chain shows the transfer of energy from one organism to another. "
-			  ]
-			},
-			{
-			  "tag": "physics_36",
-			  "patterns": [
-				" Why do leaves change color in the fall, ",
-				"Does the color of leaves changes during fall"
-			  ],
-			  "responses": [
-				" Leaves change color in the fall due to changes in pigments. "
-			  ]
-			},
-			{
-			  "tag": "physics_37",
-			  "patterns": [
-				" What is the water cycle, ",
-				"Define the water cycle"
-			  ],
-			  "responses": [
-				" The water cycle describes how water evaporates condenses and falls as precipitation. "
-			  ]
-			},
-			{
-			  "tag": "physics_38",
-			  "patterns": [
-				" How do seeds germinate, ",
-				"What is seed germination"
-			  ],
-			  "responses": [
-				" Seeds germinate when they absorb water and begin to grow. "
-			  ]
-			},
-			{
-			  "tag": "physics_39",
-			  "patterns": [
-				" Why is conservation important for endangered species, ",
-				"Explain the importance of conservation of endangered species"
-			  ],
-			  "responses": [
-				" Conservation is crucial to protect species threatened with extinction. "
-			  ]
-			},
-			{
-			  "tag": "physics_40",
-			  "patterns": [
-				" What is the role of the liver in the digestive system ",
-				"What is the use of liver in the digestive system"
-			  ],
-			  "responses": [
-				" The liver helps process and store nutrients in the digestive system. "
-			  ]
-			},
-			{
-			  "tag": "physics_41",
-			  "patterns": [
-				"What is the effect on the capacitance of a conductor when an earthed conductor is brought near it ",
-				"What happens to capacitance when it is brought near to earthing wire"
-			  ],
-			  "responses": [
-				"The earth conductor has low electric potential due to its connection to the earth. It increases the capacitance of the conductor "
-			  ]
-			},
-			{
-			  "tag": "physics_42",
-			  "patterns": [
-				"What is the property of a fuse ",
-				"What is the property of a fuse in elecrical circuit"
-			  ],
-			  "responses": [
-				"During the high current, the fuse melts and breaks the circuit. It prevents the circuit from any damage. Thus, the fuse has a low melting point and high resistivity. "
-			  ]
-			},
-			{
-			  "tag": "physics_43",
-			  "patterns": [
-				"Which one consists of both +ve  and negative charge ",
-				"What is holes in semi conductor"
-			  ],
-			  "responses": [
-				"A semiconductor consists of both positive charge carriers  known as holes and negative charge carriers electrons. "
-			  ]
-			},
-			{
-			  "tag": "physics_44",
-			  "patterns": [
-				"What is the frequency used for tele communication ",
-				"What is the frequency of speech signal"
-			  ],
-			  "responses": [
-				"The frequency range for speech signals lies between 300Hz and 3100Hz. Thus, the bandwidth of the speech signal or the telephonic communication can be calculated as:3100Hz - 300Hz = 2800Hz"
-			  ]
-			},
-			{
-			  "tag": "physics_45",
-			  "patterns": [
-				"Through which process  electromagnetic waves can be transmitted  ",
-				"How can we transmit  electromagnetic waves "
-			  ],
-			  "responses": [
-				"The electromagnetic waves through space can be transmitted using antennas and satellites. The three processes used for such transmission are space wave propagation, ground wave, and sky wave propagation. "
-			  ]
-			},
-			{
-			  "tag": "physics_46",
-			  "patterns": [
-				"Which light is deviated more by a prism ",
-				"Which color has highest refractive index"
-			  ],
-			  "responses": [
-				"Blue deviates more than red, orange, and yellow. It is because the refractive index of blue is greater than these three colors. "
-			  ]
-			},
-			{
-			  "tag": "physics_47",
-			  "patterns": [
-				"What is the force per unit charge  ",
-				"What is elecrical field"
-			  ],
-			  "responses": [
-				"  the force per unit charge is called Electric field "
-			  ]
-			},
-			{
-			  "tag": "physics_48",
-			  "patterns": [
-				"What is The unit of electric dipole moment ",
-				"What is Debye"
-			  ],
-			  "responses": [
-				"The unit of electric dipole moment is Debye "
-			  ]
-			},
-			{
-			  "tag": "physics_49",
-			  "patterns": [
-				"What is Dielectric constant for a metal  ",
-				"Which material has infinite dielectric constatnt"
-			  ],
-			  "responses": [
-				"Dielectric constant for a metal can be infinite "
-			  ]
-			},
-			{
-			  "tag": "physics_50",
-			  "patterns": [
-				"What happens when the parallel combination of multiple cells ",
-				"How to make more current using multiple cells"
-			  ],
-			  "responses": [
-				"parallel combination of multiple cells gives more current than  a single cell "
-			  ]
-			},
-			{
-			  "tag": "physics_51",
-			  "patterns": [
-				"What happens to The resistivity of alloy manganin when the temperature rises ",
-				"What are the characteristics of manganin"
-			  ],
-			  "responses": [
-				"The resistivity of alloy manganin is Nearly independent of temperature "
-			  ]
-			},
-			{
-			  "tag": "physics_52",
-			  "patterns": [
-				"What is The nature of parallel and anti-parallel currents  ",
-				"When does the current repel or attract"
-			  ],
-			  "responses": [
-				"parallel currents attract and antiparallel currents repel. "
-			  ]
-			},
-			{
-			  "tag": "physics_53",
-			  "patterns": [
-				"Which one does not follow  Newton’s third law ",
-				"Can we use Newton’s third law for Magnetic force"
-			  ],
-			  "responses": [
-				"Magnetic forces do not obey Newton’s third law. "
-			  ]
-			},
-			{
-			  "tag": "physics_54",
-			  "patterns": [
-				"What is the direction of the magnetic field of the earth ",
-				"Does the earth behas like a magnet"
-			  ],
-			  "responses": [
-				"The earth behaves as a magnet with magnetic field pointing approximately from the geographic South to North "
-			  ]
-			},
-			{
-			  "tag": "physics_55",
-			  "patterns": [
-				"Does  The strength of the earth’s magnetic field of earth remains same ",
-				"Does the earth surface has magnetic field"
-			  ],
-			  "responses": [
-				" The strength of the earth’s magnetic field vary from place to place on the earths surface. "
-			  ]
-			},
-			{
-			  "tag": "physics_56",
-			  "patterns": [
-				"What is the ferromagnetic property ",
-				"Why ferromagnetic becomes paramagnetic at high temperature"
-			  ],
-			  "responses": [
-				" The ferromagnetic property depends on its temperature. "
-			  ]
-			},
-			{
-			  "tag": "physics_57",
-			  "patterns": [
-				"What are the characteristics of a magnetic monopole ",
-				"What is monopole"
-			  ],
-			  "responses": [
-				"A magnetic monopole is a particle or object that has a single pole - north or south but not both. All existing magnets have at least two opposing poles. "
-			  ]
-			},
-			{
-			  "tag": "physics_58",
-			  "patterns": [
-				"What is conserved in Faraday's law ",
-				"What are the consequences of the conservation of electric charge"
-			  ],
-			  "responses": [
-				"Faraday's law are based on the conversion of electrical energy into mechanical energy. the law of conservation of energy also says that total energy of a isolated is always it can not be lost or gain it can change it's form from one to another but total energy will always be conserved. "
-			  ]
-			},
-			{
-			  "tag": "physics_59",
-			  "patterns": [
-				"What is difference between Fleming left and right hand rule ",
-				"How do you use Fleming's left and right hand rule"
-			  ],
-			  "responses": [
-				"Fleming's left-hand rule gives the direction of magnetic force acting on a conductor whereas; Fleming's right-hand rule gives us the direction of induced current. "
-			  ]
-			},
-			{
-			  "tag": "physics_60",
-			  "patterns": [
-				"Why Lenz law is called the conservation of energy ",
-				"What is the Lenz's law"
-			  ],
-			  "responses": [
-				"Lenz's law is based upon the law of conservation of energy. This law states that the induced current always tends to oppose the cause which produces it. So in order to do work against opposing forces, we have to put extra effort. This extra work leads to periodic changes in magnetic flux hence more current is induced. "
-			  ]
-			}
-		  
-
+		{
+			"tag": "question_11",
+			"patterns": [
+			" What is photosynthesis",
+			"Define photosynthesis"
+			],
+			"responses": [
+			" Photosynthesis is the process by which plants convert sunlight into energy and produce oxygen. "
+			]
+		},
+		{
+			"tag": "question_12",
+			"patterns": [
+			" What is the main function of leaves in plants",
+			"Define the main function of leaves in plants"
+			],
+			"responses": [
+			" Leaves in plants primarily function to capture sunlight and perform photosynthesis. "
+			]
+		},
+		{
+			"tag": "question_13",
+			"patterns": [
+			"how do plants make their own food",
+			"how do plants gets energy"
+			],
+			"responses": [
+			" Plants make their own food through a process called photosynthesis. "
+			]
+		},
+		{
+			"tag": "question_14",
+			"patterns": [
+			" What are the parts of a flower",
+			"What makes a flower"
+			],
+			"responses": [
+			" The main parts of a flower are the petals sepals stamen and pistil. "
+			]
+		},
+		{
+			"tag": "question_15",
+			"patterns": [
+			" Explain the life cycle of a frog.",
+			"What is the life cycle of a frog.,"
+			],
+			"responses": [
+			" The life cycle of a frog includes egg tadpole froglet and adult stages. "
+			]
+		},
+		{
+			"tag": "question_16",
+			"patterns": [
+			" What is the purpose of the skeleton in the human body",
+			"Define the purpose of the skeleton in the human body"
+			],
+			"responses": [
+			" The skeleton provides support protection and enables movement in the human body. "
+			]
+		},
+		{
+			"tag": "question_17",
+			"patterns": [
+			" What is digestion",
+			"Define digestion"
+			],
+			"responses": [
+			" Digestion is the process of breaking down food into smaller substances for absorption. "
+			]
+		},
+		{
+			"tag": "question_18",
+			"patterns": [
+			" What are the five senses",
+			"Define the five senses"
+			],
+			"responses": [
+			" The five senses are sight hearing taste smell and touch. "
+			]
+		},
+		{
+			"tag": "question_19",
+			"patterns": [
+			" How does the respiratory system work",
+			"Define the process of respiratory system"
+			],
+			"responses": [
+			" The respiratory system allows us to breathe taking in oxygen and releasing carbon dioxide. "
+			]
+		},
+		{
+			"tag": "question_20",
+			"patterns": [
+			" What is the difference between herbivores and carnivores",
+			"What is herbivores and carnivores"
+			],
+			"responses": [
+			" Herbivores eat plants while carnivores eat other animals. "
+			]
+		},
+		{
+			"tag": "question_21",
+			"patterns": [
+			" Why do we need water",
+			"What is the use of water"
+			],
+			"responses": [
+			" We need water for hydration bodily functions and to regulate body temperature. "
+			]
+		},
+		{
+			"tag": "question_22",
+			"patterns": [
+			" What is DNA and how does it determine traits",
+			"Define DNA and how does it determine traits"
+			],
+			"responses": [
+			" DNA is a molecule that carries genetic information determining our traits. "
+			]
+		},
+		{
+			"tag": "question_23",
+			"patterns": [
+			" How do plants reproduce",
+			"Explain reproduction of plants "
+			],
+			"responses": [
+			" Plants reproduce through processes like pollination and seed formation. "
+			]
+		},
+		{
+			"tag": "question_24",
+			"patterns": [
+			" What is the role of blood in the human body",
+			"Define the role of blood in the human body"
+			],
+			"responses": [
+			" Blood transports oxygen nutrients and waste products throughout the body. "
+			]
+		},
+		{
+			"tag": "question_25",
+			"patterns": [
+			" What is the difference between a virus and bacteria",
+			"Define the difference between a virus and bacteria"
+			],
+			"responses": [
+			" Viruses are smaller than bacteria and can't reproduce on their own. "
+			]
+		},
+		{
+			"tag": "question_26",
+			"patterns": [
+			" Why do we sweat",
+			"How does the human body release heat"
+			],
+			"responses": [
+			" Sweating helps regulate body temperature and remove toxins. "
+			]
+		},
+		{
+			"tag": "question_27",
+			"patterns": [
+			" What is adaptation in animals",
+			"Define adaptation in animals"
+			],
+			"responses": [
+			" Adaptation in animals refers to changes that help them survive in their environment. "
+			]
+		},
+		{
+			"tag": "question_28",
+			"patterns": [
+			" What are cells and why are they important",
+			"Explain the use of cells "
+			],
+			"responses": [
+			" Cells are the basic units of life and perform various functions in organisms. "
+			]
+		},
+		{
+			"tag": "question_29",
+			"patterns": [
+			" Explain the process of pollination.",
+			"Define process of pollination.,"
+			],
+			"responses": [
+			" Pollination is the transfer of pollen from one flower to another enabling fertilization. "
+			]
+		},
+		{
+			"tag": "question_30",
+			"patterns": [
+			" What is the function of the brain",
+			"Define the function of the brain"
+			],
+			"responses": [
+			" The brain controls thoughts emotions and bodily functions. "
+			]
+		},
+		{
+			"tag": "question_31",
+			"patterns": [
+			" What is an ecosystem",
+			"Define an ecosystem"
+			],
+			"responses": [
+			" An ecosystem is a community of living organisms and their environment. "
+			]
+		},
+		{
+			"tag": "question_32",
+			"patterns": [
+			" How do animals hibernate",
+			"What is the process of animals hibernation"
+			],
+			"responses": [
+			" Animals hibernate to conserve energy during harsh conditions. "
+			]
+		},
+		{
+			"tag": "question_33",
+			"patterns": [
+			" What is the importance of recycling",
+			"Define the importance of recycling"
+			],
+			"responses": [
+			" Recycling reduces waste and conserves resources. "
+			]
+		},
+		{
+			"tag": "question_34",
+			"patterns": [
+			" Why is biodiversity important",
+			"What is the use of biodiversity"
+			],
+			"responses": [
+			" Biodiversity ensures the health of ecosystems and provides resilience. "
+			]
+		},
+		{
+			"tag": "question_35",
+			"patterns": [
+			" What is a food chain",
+			"Define a food chain"
+			],
+			"responses": [
+			" A food chain shows the transfer of energy from one organism to another. "
+			]
+		},
+		{
+			"tag": "question_36",
+			"patterns": [
+			" Why do leaves change color in the fall",
+			"Does the color of leaves changes during fall"
+			],
+			"responses": [
+			" Leaves change color in the fall due to changes in pigments. "
+			]
+		},
+		{
+			"tag": "question_37",
+			"patterns": [
+			" What is the water cycle",
+			"Define the water cycle"
+			],
+			"responses": [
+			" The water cycle describes how water evaporates condenses and falls as precipitation. "
+			]
+		},
+		{
+			"tag": "question_38",
+			"patterns": [
+			" How do seeds germinate",
+			"What is seed germination"
+			],
+			"responses": [
+			" Seeds germinate when they absorb water and begin to grow. "
+			]
+		},
+		{
+			"tag": "question_39",
+			"patterns": [
+			" Why is conservation important for endangered species",
+			"Explain the importance of conservation of endangered species"
+			],
+			"responses": [
+			" Conservation is crucial to protect species threatened with extinction. "
+			]
+		},
+		{
+			"tag": "question_40",
+			"patterns": [
+			" What is the role of the liver in the digestive system",
+			"What is the use of liver in the digestive system"
+			],
+			"responses": [
+			" The liver helps process and store nutrients in the digestive system. "
+			]
+		},
+		{
+			"tag": "question_41",
+			"patterns": [
+			"What is the effect on the capacitance of a conductor when an earthed conductor is brought near it ",
+			"What happens to capacitance when it is brought near to earthing wire"
+			],
+			"responses": [
+			"The earth conductor has low electric potential due to its connection to the earth. It increases the capacitance of the conductor "
+			]
+		},
+		{
+			"tag": "question_42",
+			"patterns": [
+			"What is the property of a fuse ",
+			"What is the property of a fuse in elecrical circuit"
+			],
+			"responses": [
+			"During the high current, the fuse melts and breaks the circuit. It prevents the circuit from any damage. Thus, the fuse has a low melting point and high resistivity. "
+			]
+		},
+		{
+			"tag": "question_43",
+			"patterns": [
+			"Which one consists of both +ve  and negative charge ",
+			"What is holes in semi conductor"
+			],
+			"responses": [
+			"A semiconductor consists of both positive charge carriers  known as holes and negative charge carriers electrons. "
+			]
+		},
+		{
+			"tag": "question_44",
+			"patterns": [
+			"What is the frequency used for tele communication ",
+			"What is the frequency of speech signal"
+			],
+			"responses": [
+			"The frequency range for speech signals lies between 300Hz and 3100Hz. Thus, the bandwidth of the speech signal or the telephonic communication can be calculated as:3100Hz - 300Hz = 2800Hz"
+			]
+		},
+		{
+			"tag": "question_45",
+			"patterns": [
+			"Through which process  electromagnetic waves can be transmitted  ",
+			"How can we transmit  electromagnetic waves "
+			],
+			"responses": [
+			"The electromagnetic waves through space can be transmitted using antennas and satellites. The three processes used for such transmission are space wave propagation, ground wave, and sky wave propagation. "
+			]
+		},
+		{
+			"tag": "question_46",
+			"patterns": [
+			"Which light is deviated more by a prism ",
+			"Which color has highest refractive index"
+			],
+			"responses": [
+			"Blue deviates more than red, orange, and yellow. It is because the refractive index of blue is greater than these three colors. "
+			]
+		},
+		{
+			"tag": "question_47",
+			"patterns": [
+			"What is the force per unit charge  ",
+			"What is elecrical field"
+			],
+			"responses": [
+			"  the force per unit charge is called Electric field "
+			]
+		},
+		{
+			"tag": "question_48",
+			"patterns": [
+			"What is The unit of electric dipole moment ",
+			"What is Debye"
+			],
+			"responses": [
+			"The unit of electric dipole moment is Debye "
+			]
+		},
+		{
+			"tag": "question_49",
+			"patterns": [
+			"What is Dielectric constant for a metal  ",
+			"Which material has infinite dielectric constatnt"
+			],
+			"responses": [
+			"Dielectric constant for a metal can be infinite "
+			]
+		},
+		{
+			"tag": "question_50",
+			"patterns": [
+			"What happens when the parallel combination of multiple cells ",
+			"How to make more current using multiple cells"
+			],
+			"responses": [
+			"parallel combination of multiple cells gives more current than  a single cell "
+			]
+		},
+		{
+			"tag": "question_51",
+			"patterns": [
+			"What happens to The resistivity of alloy manganin when the temperature rises ",
+			"What are the characteristics of manganin"
+			],
+			"responses": [
+			"The resistivity of alloy manganin is Nearly independent of temperature "
+			]
+		},
+		{
+			"tag": "question_52",
+			"patterns": [
+			"What is The nature of parallel and anti-parallel currents  ",
+			"When does the current repel or attract"
+			],
+			"responses": [
+			"parallel currents attract and antiparallel currents repel. "
+			]
+		},
+		{
+			"tag": "question_53",
+			"patterns": [
+			"Which one does not follow  Newton’s third law ",
+			"Can we use Newton’s third law for Magnetic force"
+			],
+			"responses": [
+			"Magnetic forces do not obey Newton’s third law. "
+			]
+		},
+		{
+			"tag": "question_54",
+			"patterns": [
+			"What is the direction of the magnetic field of the earth ",
+			"Does the earth behas like a magnet"
+			],
+			"responses": [
+			"The earth behaves as a magnet with magnetic field pointing approximately from the geographic South to North "
+			]
+		},
+		{
+			"tag": "question_55",
+			"patterns": [
+			"Does  The strength of the earth’s magnetic field of earth remains same ",
+			"Does the earth surface has magnetic field"
+			],
+			"responses": [
+			" The strength of the earth’s magnetic field vary from place to place on the earths surface. "
+			]
+		},
+		{
+			"tag": "question_56",
+			"patterns": [
+			"What is the ferromagnetic property ",
+			"Why ferromagnetic becomes paramagnetic at high temperature"
+			],
+			"responses": [
+			" The ferromagnetic property depends on its temperature. "
+			]
+		},
+		{
+			"tag": "question_57",
+			"patterns": [
+			"What are the characteristics of a magnetic monopole ",
+			"What is monopole"
+			],
+			"responses": [
+			"A magnetic monopole is a particle or object that has a single pole - north or south but not both. All existing magnets have at least two opposing poles. "
+			]
+		},
+		{
+			"tag": "question_58",
+			"patterns": [
+			"What is conserved in Faraday's law ",
+			"What are the consequences of the conservation of electric charge"
+			],
+			"responses": [
+			"Faraday's law are based on the conversion of electrical energy into mechanical energy. the law of conservation of energy also says that total energy of a isolated is always it can not be lost or gain it can change it's form from one to another but total energy will always be conserved. "
+			]
+		},
+		{
+			"tag": "question_59",
+			"patterns": [
+			"What is difference between Fleming left and right hand rule ",
+			"How do you use Fleming's left and right hand rule"
+			],
+			"responses": [
+			"Fleming's left-hand rule gives the direction of magnetic force acting on a conductor whereas; Fleming's right-hand rule gives us the direction of induced current. "
+			]
+		},
+		{
+			"tag": "question_60",
+			"patterns": [
+			"Why Lenz law is called the conservation of energy ",
+			"What is the Lenz's law"
+			],
+			"responses": [
+			"Lenz's law is based upon the law of conservation of energy. This law states that the induced current always tends to oppose the cause which produces it. So in order to do work against opposing forces, we have to put extra effort. This extra work leads to periodic changes in magnetic flux hence more current is induced. "
+			]
+		},
+		{
+			"tag": "resources",
+			"patterns": [
+			"give me some websites to learn from",
+			"give me some resources to learn from",
+			"give some links to study materials",
+			"give some links to study from"
+			],
+			"responses": [
+			"Here are some links for you to study from: https://www.toppr.com/ask/, https://www.toppr.com/ask/, https://byjus.com/me/ and https://www.doubtnut.com"
+			]
+		}
 	]
 }

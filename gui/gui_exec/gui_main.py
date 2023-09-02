@@ -3,9 +3,6 @@ import pickle
 
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, WipeTransition
-from kivy.core.window import Window
-from kivy.utils import platform
-from kivy.clock import Clock
 
 from kivymd.app import MDApp
 #from kivymd.tools.hotreload.app import MDApp
@@ -37,6 +34,8 @@ class GuiMain(MDApp):
         self.theme_cls.theme_style = file_val["theme"]
         self.theme_cls.primary_palette = file_val["primary_palette"]
 
+        self.username = Data.username
+        self.password = Data.password
         self.server = Server()
         self.window_manager = ScreenManager(transition=WipeTransition())
 
@@ -97,7 +96,7 @@ class GuiMain(MDApp):
         if settings["primary_palette"] != palette_name:
             settings["primary_palette"] = palette_name
             
-            self.window_manager.get_screen("kv_settings_screen").add_widget(MDLabel(text="Restart required.", pos_hint={"center_x": 0.5, "center_y": 0.5})) #ids.setting_log.text = "Restart Required"
+            self.window_manager.get_screen("kv_settings_screen").add_widget(MDLabel(text="Restart required.", pos_hint={"center_x": 0.5, "center_y": 0.5}))
             
             with open("local/user_settings.json", "w" ) as user_settings_file:
                 json.dump(settings, user_settings_file)
@@ -115,10 +114,6 @@ class GuiMain(MDApp):
         self.window_manager.add_widget(AccountScreen(name="kv_account_screen"))
         return super().on_start()
 
-    def build(self):
-        if platform == "android" or platform == "ios":
-            Window.maximize()
-        else:
-            Window.size = (950, 600)
-
+    def build(self):            
+        Data.loaded = True
         return Builder.load_string(app_kivy)
