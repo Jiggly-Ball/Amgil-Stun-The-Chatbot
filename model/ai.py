@@ -1,4 +1,3 @@
-import os
 import nltk
 import numpy
 import tensorflow
@@ -9,6 +8,8 @@ import tflearn
 
 from nltk.stem.lancaster import LancasterStemmer
 from typing import Literal
+
+tensorflow.get_logger().setLevel('INFO')
 
 class Ai:
 	def __init__(self, model_no:int , n_epochs:int, batch_size:int, dataset:str) -> None: 
@@ -111,6 +112,7 @@ class Ai:
 		print()
 
 		if (prediction_values[prediction_result] < self.confidence_threshold):
+
 			return random.choice(
 				(
 					"I'm sorry, I don't understand your question.",

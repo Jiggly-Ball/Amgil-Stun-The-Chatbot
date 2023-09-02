@@ -1,7 +1,12 @@
+import pickle
+import json
+
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.button import MDRoundFlatButton
 
-from datas.server import Server
+from gui.gui_exec.gui_chat import ChatScreen
+from cloud.server import Server
+from local.data import Data
 
 
 class LoginScreen(Screen):
@@ -35,11 +40,26 @@ class LoginScreen(Screen):
             self.ids.log_label.text = "Incorrect password."
             return
 
+        print(self.ids.check_box_value.text)
+
         self.ids.log_label.text = f"Welcome {self.ids.username.text}."
 
-        self.manager.current = "kv_chat_screen"
+        Data.username = self.ids.username.text.lower().strip()
 
-        print("changed screen")
+        if Data.remember:
+            with open("local/user_info.bin", "wb") as user_info_file:
+                pickle.dump({"username":self.ids.username.text.lower().strip(), "password":self.ids.password.text}, user_info_file)
+            
+            with open("local/user_settings.json", "r") as read_settings:
+                settings = json.load(read_settings)
+
+            with open("local/user_settings.json", "w") as write_settings:
+                settings["remember"] = True
+                json.dump(settings, write_settings)
+
+            print("saved settings")
+
+        self.manager.current = "kv_chat_screen"
 
 
     def register_callback(self, item):

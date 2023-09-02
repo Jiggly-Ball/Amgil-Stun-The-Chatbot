@@ -2,17 +2,14 @@ from kivymd.uix.screen import Screen
 from kivymd.uix.button import MDRoundFlatButton
 from kivymd.uix.list import OneLineListItem
 
-#from commons.threader import Threader
-from datas.server import Server
+from cloud.server import Server
+from local.data import Data
 from model.ai import Ai
-
-
-	
 
 class ChatScreen(Screen):
 	def __init__(self, **kw):
 		super().__init__(**kw)
-		self.chatbot = Ai(1, 680, 8, "model/intents.json")
+		self.chatbot = Ai(1, 700, 8, "model/intents.json")
 		self.server = Server()
 
 	def on_enter(self):
@@ -22,24 +19,29 @@ class ChatScreen(Screen):
 
 		return super().on_enter()
 
-	def ask_model_thread(self, q: str) -> str:
-		return self.chatbot.ask_model(q)
 
 	def send_chat(self):
-		self.ids.chat_data.add_widget(
-			OneLineListItem(
-				text=f"You: {self.ids.text_data.text}"
-			)
-		)
-
-		#response = Threader(target=self.chatbot.ask_model, args=(self.ids.text_data.text.lower().strip(), ))
-		response = self.chatbot.ask_model(self.ids.text_data.text.lower().strip())
+		if len(self.ids.text_data.text) == 0:
+			return
+		
+		user_response = f"You: {self.ids.text_data.text}"
 
 		self.ids.text_data.text = ""
 
-		if isinstance(response, str):
-			self.ids.chat_data.add_widget(
-				OneLineListItem(
-					text=f"Bot: {response}"
-				)
+		self.ids.chat_data.add_widget(
+			OneLineListItem(
+				text=user_response
 			)
+		)
+
+		response = self.chatbot.ask_model(self.ids.text_data.text.lower().strip())
+		bot_response = f"Bot: {response}"
+
+		self.ids.chat_data.add_widget(
+			OneLineListItem(
+				text=bot_response
+			)
+		)
+
+		self.server.update_chat(Data.username, user_response)
+		self.server.update_chat(Data.username, bot_response)

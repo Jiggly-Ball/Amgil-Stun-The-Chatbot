@@ -44,9 +44,11 @@ login_kivy = """
             
 	MDFloatLayout:
 		MDCheckbox:
+			id: check_box_value
 			size_hint: None, None
 			size: "48dp", "48dp"
 			pos_hint: {'center_x': 0.69, 'center_y': 0.51}
+			on_active: app.check(*args)
 
 	MDLabel:
 		id: log_label

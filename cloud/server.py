@@ -8,8 +8,8 @@ from base64 import b64decode
 dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 dns.resolver.default_resolver.nameservers=["8.8.8.8"]
 
-with open("datas/token.bin", "rb") as f:
-    client = MongoClient(b64decode(pickle.load(f)).decode())
+with open("cloud/token.bin", "rb") as f:
+    client = MongoClient(b64decode(pickle.load(f)["mongo"]).decode())
 print("Connected to DB")
 
 database = client["ChatDB"]
