@@ -11,21 +11,24 @@ from typing import Tuple
 
 class Server:
 	try:
-
-		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE", connect=False)
+		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?retryWrites=true&w=majority", connect=False)
+		
 		print("Connected to DB")
+
 		database = client["ChatDB"]
+		chat_history = database["ChatHistory"]
+		user_data = database["Users"]
+		
+	except:
+		try:
+			print("Failed connecting 1")
+			client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE", connect=False)
+		except:
+			print("Failed connecting 2")
+			client = databse = user_data = chat_history = None
+			print("Setting values to None")
 
-	except errors.ConfigurationError:
-		client = databse = None
-
-	def __init__(self) -> None:
-		if self.client or self.databse is None:
-			self.user_data = self.chat_history = None
-
-		else:
-			self.user_data = self.database["Users"]
-			self.chat_history = self.database["ChatHistory"]
+	def __init__(self) -> None: ...
 	
 	def get_user(self, username:str) -> (dict | None):
 		return self.user_data.find_one({"_id":username})

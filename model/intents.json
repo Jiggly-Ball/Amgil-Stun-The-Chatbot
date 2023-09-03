@@ -15,7 +15,7 @@
 				"How are you", "hru", "how are u", "how's your day", "are you doing good", "hw u doing"
 			],
 			"responses":[
-				"I'm doing great! What would you like to talk about", "I'm doing fine. What would you like to talk about", "Doing great as usual!", "Doing great! What would you like to talk about"
+				"I'm doing great! What would you like to talk about?", "I'm doing fine. What would you like to talk about?", "Doing great as usual!", "Doing great! What would you like to talk about?"
 			]
 		},
 		{
@@ -34,6 +34,24 @@
 			],
 			"responses":[
 				"That's sad... hope you feel better soon!", "Oh no :("
+			]
+		},
+		{
+			"tag":"about_0",
+			"patterns":[
+				"what your name", "whats your name", "wuts your name", "tell me your name", "tell me ur name", "give me your name", "give ur name", "you have a name"
+			],
+			"responses":[
+				"My name is Stun Amgil!"
+			]
+		},
+		{
+			"tag":"about_1",
+			"patterns":[
+				"who created you", "who made you", "who invented you"
+			],
+			"responses":[
+				"I was created by: Krish, Adhil and Goutham."
 			]
 		},
 		{

@@ -5,6 +5,7 @@ import random
 import json
 import pickle
 import tflearn
+import openai
 
 from nltk.stem.lancaster import LancasterStemmer
 from typing import Literal
@@ -28,12 +29,13 @@ class Ai:
 		self.ignore_chars 				= ("?", "!", ".", ",", "|")	# Characters to be ignored while training
 		self.confidence_threshold 		= 0.818						# Requires atleast 81.8% confidence rate on the highest probable result to show the output to the user
 
-		self.classify:	dict | None				= None
-		self.words:		list | None				= None
-		self.labels:	list | None				= None
-		self.training:	numpy.ndarray | None	= None
-		self.output:	numpy.ndarray | None	= None
+		self.classify:	dict | None			 = None
+		self.words:		list | None			 = None
+		self.labels:	list | None			 = None
+		self.training:	numpy.ndarray | None = None
+		self.output:	numpy.ndarray | None = None
 
+		openai.api_key = "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"
 
 	def connect_model(self, training_: numpy.ndarray, output_: numpy.ndarray, mode: Literal["train", "load"]) -> (tflearn.DNN | None):
 		"""
@@ -105,21 +107,31 @@ class Ai:
 		prediction_result =  numpy.argmax(prediction_values)
 		tag_result = self.labels[prediction_result]
 
-		print()
-		print(prediction_values)
-		print(prediction_values[prediction_result])
-		print(tag_result)
-		print()
+		#print()
+		#print(prediction_values)
+		#print(prediction_values[prediction_result])
+		#print(tag_result)
+		#print()
 
 		if (prediction_values[prediction_result] < self.confidence_threshold):
-
-			return random.choice(
-				(
-					"I'm sorry, I don't understand your question.",
-					"Could you repharse your question?",
-					"What you're trying to say is beyond my knowledge, sorry."
+			try:
+				gpt_prompt = openai.ChatCompletion.create(
+					max_tokens=75,
+					model="gpt-3.5-turbo",
+					messages=[
+						{"role": "user", "content": user_input}
+						]
+					)
+				return gpt_prompt["choices"][0]["message"]["content"]
+			
+			except openai.error.APIConnectionError:
+				return random.choice(
+					(
+						"I'm sorry, I don't understand your question.",
+						"Could you repharse your question?",
+						"What you're trying to say is beyond my knowledge, sorry."
+					)
 				)
-			)
 
 		return random.choice(data["intents"][self.classify[tag_result]]["responses"])
 	

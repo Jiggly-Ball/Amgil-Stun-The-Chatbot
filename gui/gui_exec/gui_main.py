@@ -20,7 +20,7 @@ from local.data import Data
 from cloud.server import Server
 
 
-class GuiMain(MDApp):
+class Stun_Amgil(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 

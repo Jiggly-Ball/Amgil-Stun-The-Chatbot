@@ -19,6 +19,7 @@ chat_kivy = """
         pos_hint: {"center_x": 0.4, "center_y": 0.07}
 
 	MDRoundFlatButton:
+		id: send
 		text: "Send"
 		font_size: 12
 		pos_hint: {"center_x":0.8, "center_y":0.07}

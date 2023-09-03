@@ -15,7 +15,7 @@ class ChatScreen(Screen):
 
 	def __init__(self, **kw):
 		super().__init__(**kw)
-		self.chatbot = Ai(2, 700, 8, "model/intents.json")
+		self.chatbot = Ai(3, 715, 8, "model/intents.json")
 		self.server = Server()
 
 	def on_enter(self):

@@ -2,7 +2,7 @@ if __name__ == "__main__":
 	print("START")
 
 	#from model.ai import Ai
-	#Ai(2, 700, 8, "model/intents.json").train_model()
+	#Ai(3, 715, 8, "model/intents.json").train_model()
 	#exit()
 
 	#import pickle
@@ -58,7 +58,7 @@ if __name__ == "__main__":
 			except FileNotFoundError:
 				pass
 
-	from gui.gui_exec.gui_main import GuiMain	# Needs to be placed here for the autologin system to work
+	from gui.gui_exec.gui_main import Stun_Amgil	# Needs to be placed here for the autologin system to work
 	from kivy.core.window import Window
 	from kivy.utils import platform
 	from kivy import require
@@ -72,4 +72,4 @@ if __name__ == "__main__":
 		Window.size = (1100, 600)
 		Data.device = "pc"
 
-	GuiMain().run()
+	Stun_Amgil().run()
