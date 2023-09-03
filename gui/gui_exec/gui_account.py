@@ -18,8 +18,6 @@ class AccountScreen(Screen):
 		return super().on_enter()
 	
 	def logout(self):
-		
-		Data.chat_logged = 0
 		ChatScreen.chat_data.clear()
 		self.manager.get_screen("kv_chat_screen").ids.chat_data.clear_widgets()
 

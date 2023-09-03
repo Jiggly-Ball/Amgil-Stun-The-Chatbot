@@ -46,7 +46,10 @@ class ChatScreen(Screen):
 				print("Populating end")
 				print(self.chat_data)
 			asynckivy.start(populate())
-		history_handler()
+		
+		if Data.internet:
+			history_handler()
+
 		return super().on_enter()
 
 
@@ -72,7 +75,8 @@ class ChatScreen(Screen):
 			)
 		)
 
-		user_chat_id = self.server.update_chat(Data.username, f"You: {user_response}")[1]
-		bot_chat_id = self.server.update_chat(Data.username, f"Bot: {bot_response}" )[1]
+		if Data.internet:
+			user_chat_id = self.server.update_chat(Data.username, f"You: {user_response}")[1]
+			bot_chat_id = self.server.update_chat(Data.username, f"Bot: {bot_response}" )[1]
 
-		self.chat_data.extend([user_chat_id, bot_chat_id])
+			self.chat_data.extend([user_chat_id, bot_chat_id])

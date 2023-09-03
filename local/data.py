@@ -7,6 +7,7 @@ class Data:
 	password = "*****"
 
 	login_allow = False
+	internet = True
 	device = "pc"
 
 	theme_style = "Dark"

@@ -2,14 +2,13 @@ import json
 import pickle
 
 from kivy.lang import Builder
+from kivy.clock import Clock
 from kivy.uix.screenmanager import ScreenManager, WipeTransition
 
 from kivymd.app import MDApp
 #from kivymd.tools.hotreload.app import MDApp
 from kivymd.uix.menu.menu import MDDropdownMenu
 from kivymd.uix.label import MDLabel
-from kivymd.theming import ThemeManager
-
 
 from gui.kivys.app_model import app_kivy
 from gui.gui_exec.gui_account import AccountScreen
@@ -101,8 +100,7 @@ class GuiMain(MDApp):
             with open("local/user_settings.json", "w" ) as user_settings_file:
                 json.dump(settings, user_settings_file)
             
-    
-
+            
     def check(self, checkbox, active):
         print(active)
         Data.remember = active
@@ -113,6 +111,19 @@ class GuiMain(MDApp):
         self.window_manager.add_widget(SettingsScreen(name="kv_settings_screen"))
         self.window_manager.add_widget(AccountScreen(name="kv_account_screen"))
         return super().on_start()
+
+    def refresh_callback(self, *args):
+        def refresh_callback(interval):
+            self.screen.ids.box.clear_widgets()
+            if self.x == 0:
+                self.x, self.y = 15, 30
+            else:
+                self.x, self.y = 0, 15
+            self.set_list()
+            self.screen.ids.refresh_layout.refresh_done()
+            self.tick = 0
+
+        Clock.schedule_once(refresh_callback, 1)
 
     def build(self):            
         Data.loaded = True

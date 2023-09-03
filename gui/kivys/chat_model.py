@@ -1,5 +1,4 @@
 chat_kivy = """
-
 <ChatScreen>:
 	name: "kv_chat_screen"
 

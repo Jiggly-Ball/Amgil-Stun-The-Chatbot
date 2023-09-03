@@ -1,26 +1,31 @@
-import pickle
 import dns
 import random
 
 from pymongo import MongoClient
-from pymongo.errors import DuplicateKeyError
+from pymongo import errors
 
-from base64 import b64decode
 from typing import Tuple
 
-dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
-dns.resolver.default_resolver.nameservers=["8.8.8.8"]
-
-with open("cloud/token.bin", "rb") as f:
-    client = MongoClient(b64decode(pickle.load(f)["mongo"]).decode())
-print("Connected to DB")
-
-database = client["ChatDB"]
+#dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
+#dns.resolver.default_resolver.nameservers=["8.8.8.8"]
 
 class Server:
+	try:
+
+		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE", connect=False)
+		print("Connected to DB")
+		database = client["ChatDB"]
+
+	except errors.ConfigurationError:
+		client = databse = None
+
 	def __init__(self) -> None:
-		self.user_data = database["Users"]
-		self.chat_history = database["ChatHistory"]
+		if self.client or self.databse is None:
+			self.user_data = self.chat_history = None
+
+		else:
+			self.user_data = self.database["Users"]
+			self.chat_history = self.database["ChatHistory"]
 	
 	def get_user(self, username:str) -> (dict | None):
 		return self.user_data.find_one({"_id":username})
@@ -31,11 +36,11 @@ class Server:
 	def post_user(self, username:str, password:str) -> bool:
 		try:
 			self.user_data.insert_one({"_id":username, "password":password})
-		except DuplicateKeyError:
+		except errors.DuplicateKeyError:
 			return False
 		try:
 			self.chat_history.insert_one({"_id":username, "chat_history":{}})
-		except DuplicateKeyError:
+		except errors.DuplicateKeyError:
 			return False
 		return True
 

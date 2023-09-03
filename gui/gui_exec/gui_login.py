@@ -3,8 +3,8 @@ import json
 
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.button import MDRoundFlatButton
+from kivymd.utils import asynckivy
 
-from gui.gui_exec.gui_chat import ChatScreen
 from cloud.server import Server
 from local.data import Data
 
@@ -15,14 +15,26 @@ class LoginScreen(Screen):
         self.server = Server()
 
     def on_enter(self):
+        if not Data.internet:
+            def offline_handler():
+                async def offline_mode():
 
-        login_button = MDRoundFlatButton(text="Login", pos_hint={"center_x":0.5, "center_y":0.4}, on_release=self.login_callback)
-        register_button = MDRoundFlatButton(text="Register", pos_hint={"center_x":0.5, "center_y":0.3}, on_release=self.register_callback)
+                    await asynckivy.sleep(2)
+                    self.manager.current = "kv_chat_screen"
 
-        self.add_widget(login_button)
-        self.add_widget(register_button)
+                asynckivy.start(offline_mode())
+            offline_handler()
 
-        return super().on_enter()
+            
+        
+        else:
+            login_button = MDRoundFlatButton(text="Login", pos_hint={"center_x":0.5, "center_y":0.4}, on_release=self.login_callback)
+            register_button = MDRoundFlatButton(text="Register", pos_hint={"center_x":0.5, "center_y":0.3}, on_release=self.register_callback)
+
+            self.add_widget(login_button)
+            self.add_widget(register_button)
+
+            return super().on_enter()
     
 
     def login_callback(self, item):
