@@ -1,5 +1,4 @@
 import json
-import pickle
 
 from kivy.lang import Builder
 from kivy.clock import Clock
@@ -102,7 +101,6 @@ class Stun_Amgil(MDApp):
             
             
     def check(self, checkbox, active):
-        print(active)
         Data.remember = active
 
     def on_start(self):

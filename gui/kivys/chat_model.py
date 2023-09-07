@@ -6,6 +6,8 @@ chat_kivy = """
 		padding: 95
 
 		MDScrollView:
+			id: scroll
+			
 			MDList:
 				id: chat_data
 				

@@ -19,6 +19,8 @@ class AccountScreen(Screen):
 	
 	def logout(self):
 		ChatScreen.chat_data.clear()
+		Data.password = "*****"
+		Data.username = "G0"
 		self.manager.get_screen("kv_chat_screen").ids.chat_data.clear_widgets()
 
 		try:

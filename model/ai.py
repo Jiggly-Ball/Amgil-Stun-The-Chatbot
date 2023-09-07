@@ -1,6 +1,5 @@
 import nltk
 import numpy
-import tensorflow
 import random
 import json
 import pickle
@@ -9,8 +8,6 @@ import openai
 
 from nltk.stem.lancaster import LancasterStemmer
 from typing import Literal
-
-tensorflow.get_logger().setLevel('INFO')
 
 class Ai:
 	def __init__(self, model_no:int , n_epochs:int, batch_size:int, dataset:str) -> None: 
@@ -35,14 +32,14 @@ class Ai:
 		self.training:	numpy.ndarray | None = None
 		self.output:	numpy.ndarray | None = None
 
-		openai.api_key = "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"
+		openai.api_key = "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"
 
 	def connect_model(self, training_: numpy.ndarray, output_: numpy.ndarray, mode: Literal["train", "load"]) -> (tflearn.DNN | None):
 		"""
 		Optimizes and creates / loads a fully connected neural network
 		"""
 
-		tensorflow.compat.v1.reset_default_graph()
+		#tensorflow.compat.v1.reset_default_graph()
 
 		net = tflearn.input_data(shape=[None, len(training_[0])])
 		net = tflearn.regression(
@@ -82,7 +79,7 @@ class Ai:
 		except FileNotFoundError:
 			return print("ERROR: The intents file doesn't exist for referencing model")
 		
-		if any(arr is None for arr in (self.words, self.labels, self.training, self.output)): #  Since self.training & self.output are an array, we need to manually check weather each elemnt is of None type. 
+		if any(arr is None for arr in (self.words, self.labels, self.training, self.output)): #  Since all the elements are of iterable types we need to manually check weather each elemnt is of None type. 
 			with open(rf"model\model_versions\MV{self.MODEL_NO}\train_data\training_data_{self.MODEL_NO}.bin", "rb") as training_data_file:
 				self.words, self.labels, self.training, self.output = pickle.load(training_data_file)
 			
@@ -107,14 +104,15 @@ class Ai:
 		prediction_result =  numpy.argmax(prediction_values)
 		tag_result = self.labels[prediction_result]
 
-		#print()
-		#print(prediction_values)
-		#print(prediction_values[prediction_result])
-		#print(tag_result)
-		#print()
+		print()
+		print(prediction_values)
+		print(prediction_values[prediction_result])
+		print(tag_result)
+		print()
 
 		if (prediction_values[prediction_result] < self.confidence_threshold):
 			try:
+				print("GPT")
 				gpt_prompt = openai.ChatCompletion.create(
 					max_tokens=75,
 					model="gpt-3.5-turbo",
@@ -124,7 +122,8 @@ class Ai:
 					)
 				return gpt_prompt["choices"][0]["message"]["content"]
 			
-			except openai.error.APIConnectionError:
+			except:
+				print("GPT FAIL")
 				return random.choice(
 					(
 						"I'm sorry, I don't understand your question.",

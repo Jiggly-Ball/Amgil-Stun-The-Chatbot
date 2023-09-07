@@ -36,6 +36,13 @@ class LoginScreen(Screen):
 
             return super().on_enter()
     
+    def on_leave(self):
+        self.manager.get_screen("kv_account_screen").ids.username = Data.username
+        self.manager.get_screen("kv_account_screen").ids.password = "*" * len(Data.password)
+
+        print(Data.username, Data.password)
+
+        return super().on_enter()
 
     def login_callback(self, item):
         print(self.ids.username.text)

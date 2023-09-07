@@ -1,2 +1,2 @@
-model_checkpoint_path: "D:\\GA\\Python Projects\\AI Chatbot\\STAI-CODEX-Educational-Chatbot\\model\\model_versions\\MV3\\generative_model_3.715.8.tflearn"
-all_model_checkpoint_paths: "D:\\GA\\Python Projects\\AI Chatbot\\STAI-CODEX-Educational-Chatbot\\model\\model_versions\\MV3\\generative_model_3.715.8.tflearn"
+model_checkpoint_path: "D:\\GA\\Python Projects\\AI Chatbot\\STAI-CODEX-Educational-Chatbot\\model\\model_versions\\MV3\\generative_model_3.700.8.tflearn"
+all_model_checkpoint_paths: "D:\\GA\\Python Projects\\AI Chatbot\\STAI-CODEX-Educational-Chatbot\\model\\model_versions\\MV3\\generative_model_3.700.8.tflearn"

@@ -2,7 +2,7 @@ if __name__ == "__main__":
 	print("START")
 
 	#from model.ai import Ai
-	#Ai(3, 715, 8, "model/intents.json").train_model()
+	#Ai(3, 700, 8, "model/intents.json").train_model()
 	#exit()
 
 	#import pickle
