@@ -11,7 +11,7 @@ from typing import Tuple
 
 class Server:
 	try:
-		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?retryWrites=true&w=majority", connect=False, timeout=4)
+		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?retryWrites=true&w=majority", connect=False)
 		
 		print("Connected to DB")
 
