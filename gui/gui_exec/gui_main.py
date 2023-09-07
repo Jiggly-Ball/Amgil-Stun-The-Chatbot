@@ -23,6 +23,8 @@ class Stun_Amgil(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+        
+
         with open("local/user_settings.json", "r") as settings_file:
             file_val = json.load(settings_file)
 
@@ -125,4 +127,5 @@ class Stun_Amgil(MDApp):
 
     def build(self):            
         Data.loaded = True
+        self.icon = "/icons/amgil_stun_icon.png"
         return Builder.load_string(app_kivy)

@@ -11,7 +11,7 @@ from typing import Tuple
 
 class Server:
 	try:
-		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?retryWrites=true&w=majority", connect=False)
+		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?retryWrites=true&w=majority", connect=False, timeout=4)
 		
 		print("Connected to DB")
 
@@ -20,13 +20,14 @@ class Server:
 		user_data = database["Users"]
 		
 	except:
-		try:
-			print("Failed connecting 1")
-			client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE", connect=False)
-		except:
-			print("Failed connecting 2")
-			client = databse = user_data = chat_history = None
-			print("Setting values to None")
+		pass
+		#try:
+		#	print("Failed connecting 1")
+		#	client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE", #connect=False)
+		#except:
+		#	print("Failed connecting 2")
+		#	client = databse = user_data = chat_history = None
+		#	print("Setting values to None")
 
 	def __init__(self) -> None: ...
 	
