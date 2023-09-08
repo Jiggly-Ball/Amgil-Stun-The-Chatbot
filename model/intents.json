@@ -6,7 +6,7 @@
 				"hi", "hello", "whats up", "sup", "yo", "heloo", "helllooo", "helu", "hoi", "hui", "heloo"
 			],
 			"responses":[
-				"Hello there! How you doing", "Hello there, how may I help you", "Hello!", "Hi!"
+				"Hello there! How are you doing", "Hello there, how may I help you", "Hello!", "Hi!"
 			]
 		},
 		{
@@ -114,7 +114,7 @@
 		{
 			"tag": "question_14",
 			"patterns": [
-			" What are the parts of a flower",
+			"What are the parts of a flower",
 			"What makes a flower"
 			],
 			"responses": [
@@ -144,7 +144,7 @@
 		{
 			"tag": "question_17",
 			"patterns": [
-			" What is digestion",
+			"What is digestion",
 			"Define digestion"
 			],
 			"responses": [

@@ -3,6 +3,8 @@ import json
 from kivy.lang import Builder
 from kivy.clock import Clock
 from kivy.uix.screenmanager import ScreenManager, WipeTransition
+from kivy.config import Config
+
 
 from kivymd.app import MDApp
 #from kivymd.tools.hotreload.app import MDApp
@@ -22,8 +24,6 @@ from cloud.server import Server
 class Stun_Amgil(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-        
 
         with open("local/user_settings.json", "r") as settings_file:
             file_val = json.load(settings_file)
@@ -125,7 +125,8 @@ class Stun_Amgil(MDApp):
 
         Clock.schedule_once(refresh_callback, 1)
 
-    def build(self):            
+    def build(self):
+        #self.icon = "C:\ProgFiles2\STAI-CODEX-Educational-Chatbot\gui\gui_exec\icon\Robot.jpeg"
+        Config.set('kivy','window_icon','Robot.jpeg')
         Data.loaded = True
-        self.icon = "/icons/amgil_stun_icon.png"
         return Builder.load_string(app_kivy)

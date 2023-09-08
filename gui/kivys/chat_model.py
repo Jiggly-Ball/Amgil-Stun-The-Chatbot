@@ -2,6 +2,16 @@ chat_kivy = """
 <ChatScreen>:
 	name: "kv_chat_screen"
 
+	MDLabel:
+		id: remember
+		text: "Press CTRL + T for Text to Speech"
+        pos_hint: {"center_x": 0.7, "center_y": 0.9}
+		font_size: 15
+		halign: "center"
+		size_hint_y: None
+		height: self.texture_size[1]
+		padding_y: 15
+    
 	MDBoxLayout:
 		padding: 95
 

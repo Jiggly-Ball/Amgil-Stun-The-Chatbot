@@ -4,6 +4,7 @@ import random
 import json
 import pickle
 import tflearn
+import tensorflow
 import openai
 
 from nltk.stem.lancaster import LancasterStemmer
@@ -32,14 +33,15 @@ class Ai:
 		self.training:	numpy.ndarray | None = None
 		self.output:	numpy.ndarray | None = None
 
-		openai.api_key = "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"
+		#openai.api_key = "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"
+		openai.api_key = "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"
 
 	def connect_model(self, training_: numpy.ndarray, output_: numpy.ndarray, mode: Literal["train", "load"]) -> (tflearn.DNN | None):
 		"""
 		Optimizes and creates / loads a fully connected neural network
 		"""
 
-		#tensorflow.compat.v1.reset_default_graph()
+		tensorflow.compat.v1.reset_default_graph()
 
 		net = tflearn.input_data(shape=[None, len(training_[0])])
 		net = tflearn.regression(

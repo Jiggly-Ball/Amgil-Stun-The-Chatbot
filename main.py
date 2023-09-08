@@ -1,22 +1,5 @@
 if __name__ == "__main__":
-	print("START")
-
-	#from model.ai import Ai
-	#Ai(3, 700, 8, "model/intents.json").train_model()
-	#exit()
-
-	#import pickle
-	#from base64 import b64decode
-	#print(pickle.loads())
-	
-
-	#print(b64decode(b"bW9uZ29kYitzcnY6Ly90b2FzdGVkd2FpZnUwMDpzdGFpY29kZXgyMDIzQGNsdXN0ZXIwLmV3cWFwZHEubW9uZ29kYi5uZXQvP3JldHJ5V3JpdGVzPXRydWUmdz1tYWpvcml0eQ=="))
-
-	#with open("cloud/token.bin", "rb") as f:
-	#	a = pickle.load(f)
-	#	print(a)
-
-	#exit()
+	print("Start")
 
 	import os
 	os.environ['TF_CPP_MIN_LOG_LEVEL'] = "3"

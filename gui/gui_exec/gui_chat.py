@@ -1,9 +1,12 @@
-import random
+import keyboard
 
 from kivymd.uix.screen import Screen
 from kivymd.uix.button import MDRoundFlatButton
 from kivymd.uix.list import OneLineListItem
 from kivymd.utils import asynckivy
+#from kivy.core.window import Window, Keyboard
+
+from win32com.client import Dispatch
 
 from cloud.server import Server
 from local.data import Data
@@ -12,14 +15,34 @@ from model.ai import Ai
 class ChatScreen(Screen):
 
 	chat_data = []
+	speak = Dispatch("SAPI.SpVoice").Speak
 
 	def __init__(self, **kw):
 		super().__init__(**kw)
 		self.chatbot = Ai(3, 700, 8, "model/intents.json")
 		self.server = Server()
+		self.last_message = ""
+		keyboard.add_hotkey('ctrl+t', self.bot_speak)
+	
+	def bot_speak(self):
+		self.speak(self.last_message)
+
+	#ef on_enter(self):
+
+
+	#def _keyboard_released(self, window, keycode):
+	#	self.super = []
+#
+	#def _keyboard_on_key_down(self, window, keycode, text, super):
+	#	if 'lctrl' in self.super and keycode[1] == 't':
+	#		self.speak(self.last_message)
 
 	def on_enter(self):
 		print(Data.username)
+
+		#keyboard = Window.request_keyboard(self._keyboard_released, self)
+		#keyboard.bind(on_key_down=self._keyboard_on_key_down, on_key_up=self._keyboard_released)
+		
 
 		def history_handler():
 			async def populate():
@@ -45,6 +68,7 @@ class ChatScreen(Screen):
 				
 				print("Populating end")
 				print(self.chat_data)
+				
 			asynckivy.start(populate())
 		
 		if Data.internet:
@@ -54,29 +78,36 @@ class ChatScreen(Screen):
 
 
 	def send_chat(self):
-		if len(self.ids.text_data.text) == 0:
-			return
-		
-		user_response = self.ids.text_data.text
+		async def send_handle():
+			async def user_chat_handle():
+				if len(self.ids.text_data.text) == 0:
+					return
+				
+				user_response = self.ids.text_data.text
 
-		self.ids.text_data.text = ""
+				self.ids.text_data.text = ""
 
-		self.ids.chat_data.add_widget(
-			OneLineListItem(
-				text=f"You: {user_response}"
-			)
-		)
+				self.ids.chat_data.add_widget(
+					OneLineListItem(
+						text=f"You: {user_response}"
+					)
+				)
 
-		bot_response = self.chatbot.ask_model(user_response.lower().strip())
-		
-		self.ids.chat_data.add_widget(
-			OneLineListItem(
-				text=f"Bot: {bot_response}"
-			)
-		)
+				bot_response = self.chatbot.ask_model(user_response.lower().strip())
+				self.last_message = bot_response
+				
+				self.ids.chat_data.add_widget(
+					OneLineListItem(
+						text=f"Amgil Stun: {bot_response}"
+					)
+				)
 
-		if Data.internet:
-			user_chat_id = self.server.update_chat(Data.username, f"You: {user_response}")[1]
-			bot_chat_id = self.server.update_chat(Data.username, f"Bot: {bot_response}" )[1]
+				if Data.internet:
+					user_chat_id = self.server.update_chat(Data.username,f"You: {user_response}")[1]
+					bot_chat_id = self.server.update_chat(Data.username, f"Amgil Stun: {bot_response}")[1]
 
-			self.chat_data.extend([user_chat_id, bot_chat_id])
+					self.chat_data.extend([user_chat_id, bot_chat_id])
+			
+			asynckivy.start(user_chat_handle())
+			
+		asynckivy.start(send_handle())
