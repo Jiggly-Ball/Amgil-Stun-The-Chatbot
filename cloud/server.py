@@ -12,19 +12,25 @@ from local.secerets import keys
 #dns.resolver.default_resolver.nameservers=["8.8.8.8"]
 
 class Server:
-	try:
-		client = MongoClient(keys["mongo_db"], connect=False)
-		
-		print("Connected to DB")
+	def __init__(self) -> None:
+		try:
+			client = MongoClient(keys["mongo_db"], connect=False)
+			print("Connected to DB")
 
-		database = client["ChatDB"]
-		chat_history = database["ChatHistory"]
-		user_data = database["Users"]
-		
-	except:
-		pass #client = databse = user_data = chat_history = None
+			database = client["ChatDB"]
 
-	def __init__(self) -> None: ...
+			collections = database.list_collection_names()
+			if "ChatHistory" not in collections:
+				database.create_collection("ChatHistory")
+			if "Users" not in collections:
+				database.create_collection("Users")
+			
+			self.chat_history = database["ChatHistory"]
+			self.user_data    = database["Users"]
+			
+		except:
+			pass #client = databse = user_data = chat_history = None
+
 	
 	def get_user(self, username:str) -> (dict | None):
 		return self.user_data.find_one({"_id":username})
