@@ -6,6 +6,7 @@ from pymongo import errors
 from typing import Tuple
 
 from local.secerets import keys
+from local.data import Data
 
 #import dns
 #dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
@@ -29,6 +30,7 @@ class Server:
 			self.user_data    = database["Users"]
 			
 		except:
+			Data.internet = False
 			pass #client = databse = user_data = chat_history = None
 
 	

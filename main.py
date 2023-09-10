@@ -11,10 +11,13 @@ if __name__ == "__main__":
 
 	from cloud.server import Server
 	from local.data import Data
+	from local.secerets import keys
 	from model.ai import Ai
 
 	try:
 		requests.get("https://google.com")
+		if len(keys["mongo_db"]) == 0:
+			raise requests.exceptions.ConnectionError()
 	except requests.exceptions.ConnectionError:
 		Data.internet = False
 	
