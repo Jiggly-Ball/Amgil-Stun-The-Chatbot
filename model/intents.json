@@ -504,11 +504,11 @@
 		{
 			"tag": "question_53",
 			"patterns": [
-			"Which one does not follow  Newton’s third law ",
-			"Can we use Newton’s third law for Magnetic force"
+			"Which one does not follow  Newton's third law ",
+			"Can we use Newton's third law for Magnetic force"
 			],
 			"responses": [
-			"Magnetic forces do not obey Newton’s third law. "
+			"Magnetic forces do not obey Newton's third law. "
 			]
 		},
 		{
@@ -524,11 +524,11 @@
 		{
 			"tag": "question_55",
 			"patterns": [
-			"Does  The strength of the earth’s magnetic field of earth remains same ",
+			"Does  The strength of the earth's magnetic field of earth remains same ",
 			"Does the earth surface has magnetic field"
 			],
 			"responses": [
-			" The strength of the earth’s magnetic field vary from place to place on the earths surface. "
+			" The strength of the earth's magnetic field vary from place to place on the earths surface. "
 			]
 		},
 		{
@@ -548,7 +548,7 @@
 			"What is monopole"
 			],
 			"responses": [
-			"A magnetic monopole is a particle or object that has a single pole - north or south but not both. All existing magnets have at least two opposing poles. "
+			"A magnetic monopole is a particle or object that has a single pole - north or south but not both. All existing magnets have at least two opposing poles. "
 			]
 		},
 		{
