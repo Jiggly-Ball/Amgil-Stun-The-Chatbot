@@ -24,8 +24,6 @@ class LoginScreen(Screen):
 
                 asynckivy.start(offline_mode())
             offline_handler()
-
-            
         
         else:
             login_button = MDRoundFlatButton(text="Login", pos_hint={"center_x":0.5, "center_y":0.4}, on_release=self.login_callback)

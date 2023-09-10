@@ -19,7 +19,8 @@ class ChatScreen(Screen):
 
 	def __init__(self, **kw):
 		super().__init__(**kw)
-		self.chatbot = Ai(3, 700, 8, "model/intents.json")
+		self.chatbot = Ai(Data.model_number, Data.model_epochs, Data.model_batch, Data.model_dataset)
+		#self.chatbot = Ai(3, 700, 8, "model/intents.json")
 		self.server = Server()
 		self.last_message = ""
 		keyboard.add_hotkey('ctrl+t', self.bot_speak)
@@ -27,22 +28,7 @@ class ChatScreen(Screen):
 	def bot_speak(self):
 		self.speak(self.last_message)
 
-	#ef on_enter(self):
-
-
-	#def _keyboard_released(self, window, keycode):
-	#	self.super = []
-#
-	#def _keyboard_on_key_down(self, window, keycode, text, super):
-	#	if 'lctrl' in self.super and keycode[1] == 't':
-	#		self.speak(self.last_message)
-
 	def on_enter(self):
-		print(Data.username)
-
-		#keyboard = Window.request_keyboard(self._keyboard_released, self)
-		#keyboard.bind(on_key_down=self._keyboard_on_key_down, on_key_up=self._keyboard_released)
-		
 
 		def history_handler():
 			async def populate():

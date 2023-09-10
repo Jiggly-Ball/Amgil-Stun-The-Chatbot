@@ -12,3 +12,8 @@ class Data:
 
 	theme_style = "Dark"
 	primary_palette = "Pink"
+
+	model_number  = 3
+	model_epochs  = 700
+	model_batch   = 8
+	model_dataset = "model/intents.json"
