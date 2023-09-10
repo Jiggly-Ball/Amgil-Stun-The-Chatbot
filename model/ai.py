@@ -10,6 +10,8 @@ import openai
 from nltk.stem.lancaster import LancasterStemmer
 from typing import Literal
 
+from local.secerets import keys
+
 class Ai:
 	def __init__(self, model_no:int , n_epochs:int, batch_size:int, dataset:str) -> None: 
 		try:
@@ -33,8 +35,7 @@ class Ai:
 		self.training:	numpy.ndarray | None = None
 		self.output:	numpy.ndarray | None = None
 
-		#openai.api_key = "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"
-		openai.api_key = "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"
+		openai.api_key = keys["open_ai"]
 
 	def connect_model(self, training_: numpy.ndarray, output_: numpy.ndarray, mode: Literal["train", "load"]) -> (tflearn.DNN | None):
 		"""

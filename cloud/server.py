@@ -1,4 +1,3 @@
-import dns
 import random
 
 from pymongo import MongoClient
@@ -6,12 +5,15 @@ from pymongo import errors
 
 from typing import Tuple
 
+from local.secerets import keys
+
+#import dns
 #dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
 #dns.resolver.default_resolver.nameservers=["8.8.8.8"]
 
 class Server:
 	try:
-		client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?retryWrites=true&w=majority", connect=False)
+		client = MongoClient(keys["mongo_db"], connect=False)
 		
 		print("Connected to DB")
 
@@ -20,13 +22,7 @@ class Server:
 		user_data = database["Users"]
 		
 	except:
-		try:
-			print("Failed connecting 1")
-			client = MongoClient("mongodb+srv://toastedwaifu00:staicodex2023@cluster0.ewqapdq.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE", connect=False)
-		except:
-			print("Failed connecting 2")
-			client = databse = user_data = chat_history = None
-			print("Setting values to None")
+		pass #client = databse = user_data = chat_history = None
 
 	def __init__(self) -> None: ...
 	
