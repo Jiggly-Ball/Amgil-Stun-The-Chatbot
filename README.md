@@ -23,6 +23,9 @@
  To use different models go to [local/data.py](https://github.com/Krishpy-Chips/Amgil-Stun-The-Chatbot/blob/main/local/data.py) and change `model_number` to a number from 0 to 3 with 3 being the smartest and 0 being the dumbest.
  In case you want to use the 0th model you will need to also change `model_epochs` to `2000`. In all models the `model_batch` will remain `8`.
 
+## Demo Video-
+https://github.com/Krishpy-Chips/Amgil-Stun-The-Chatbot/assets/101330162/2cee13d7-8837-416b-a7c4-c534fa99f0a8
+
 ## Todo list (if I ever decide to come back to this)
 - Auto adjust font colour on changing theme
 - Change the palette colour when changed without restart
