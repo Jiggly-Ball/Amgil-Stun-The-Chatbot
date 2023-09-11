@@ -3,7 +3,7 @@
  There are still many unfinished features and bugs that needs to be fixed and won't be any time soon.
 
 ## About Amgil Stun
- Amgil stun's GUI is made by using Kivy and KivyMD for its user friendly and unique interface. The AI was built with the help of tflearn and tensorflow with the help of this [video](https://www.youtube.com/watch?v=wypVcNIH6D4)
+ Amgil stun's GUI is made by using Kivy and KivyMD for its user friendly and unique interface. The AI was built with the help of tflearn, tensorflow, ntlk and numpy with the help of this [video](https://www.youtube.com/watch?v=wypVcNIH6D4). The bot uses MongoDB for cloud storage of chat history and also uses OpenAI in case the bot cannot answer the question.
 
 ## What does Amgil Stun offer?
  This chatbot was trained over physics and biology questions mainly (check model/intents.json to see all the available questions it can answer).
