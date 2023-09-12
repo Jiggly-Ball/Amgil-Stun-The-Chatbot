@@ -27,11 +27,13 @@
 https://github.com/Krishpy-Chips/Amgil-Stun-The-Chatbot/assets/101330162/2cee13d7-8837-416b-a7c4-c534fa99f0a8
 
 ## Todo list (if I ever decide to come back to this)
-- Auto adjust font colour on changing theme
+- Auto adjust font colour on changing theme without restart
 - Change the palette colour when changed without restart
 - Enhancing the AI model's accuracy
 - Expanding the AI model's dataset to answer various other subjects
 - Fix window icon not showing
+- Fix lag issues
 - Add support for Andriod & iOS
-- Lag issues
-- No line wrapping for long messages
+- Add line wrapping for long messages
+- Add autoscroll
+- Caching chat history (with redis)
